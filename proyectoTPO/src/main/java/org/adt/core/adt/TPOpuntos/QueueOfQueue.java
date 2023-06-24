@@ -1,4 +1,4 @@
-package org.adt.core.adt.utils;
+package org.adt.core.adt.TPOpuntos;
 
 import org.adt.core.adt.definition.IQueue;
 import org.adt.core.adt.definition.IStack;

@@ -31,6 +31,18 @@ public class MatricesQoS {
 
         return matriz;
     }
+
+    public static int calcularTraza(QueueOfStacks qos) {
+        int [][] matrix = crearMatrizDesdeColaDePilas(qos);
+
+        int traza = 0;
+        int n = matrix.length;
+
+        for (int i = 0; i < n; i++) {
+            traza += matrix[i][i];
+        }
+        return traza;
+    }
     public static void imprimirMatriz(int[][] matriz) {
         int filas = matriz.length;
         int columnas = matriz[0].length;
@@ -42,7 +54,7 @@ public class MatricesQoS {
             System.out.println();
         }}
     public static void printQos(QueueOfStacks a) {
-        QueueOfStacks aux = new QueueOfStacks();
+        QueueOfStacks aux = new QueueOfStacks(3);
         while (!a.isEmpty()) {
 
             aux.add(a.getFirst());
@@ -78,14 +90,14 @@ public class MatricesQoS {
         stack3.add(200);
         stack3.add(300);
 
-        QueueOfStacks qos = new QueueOfStacks();
+        QueueOfStacks qos = new QueueOfStacks(3);
         qos.add(stack);
         qos.add(stack2);
         qos.add(stack3);
 
+        imprimirMatriz(crearMatrizDesdeColaDePilas(qos));
+        System.out.println(calcularTraza(qos));
 
-        int[][] matrix = crearMatrizDesdeColaDePilas(qos);
-        imprimirMatriz(matrix);
     }
 }
 

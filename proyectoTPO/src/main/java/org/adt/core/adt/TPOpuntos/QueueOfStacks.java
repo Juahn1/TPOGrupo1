@@ -9,12 +9,14 @@ import java.util.Queue;
 
 public class QueueOfStacks {
     private IStack[] arrayofstacks;
+    private int max;
     private int count;
 
 
-    public QueueOfStacks() {
-        this.arrayofstacks = new IStack[3];
+    public QueueOfStacks(int n) {
+        this.arrayofstacks = new IStack[n];
         this.count = 0;
+        this.max = n;
     }
 
 
@@ -40,7 +42,7 @@ public class QueueOfStacks {
      * #Precondicion: Que los stack tengan si o si 3 elementos
      * */
     public void add(IStack a) {
-        if (contador(a) == 3) {
+        if (this.count<this.max-1 && contador(a)==this.max) {
             this.arrayofstacks[this.count] = a;
         }
         this.count++;
