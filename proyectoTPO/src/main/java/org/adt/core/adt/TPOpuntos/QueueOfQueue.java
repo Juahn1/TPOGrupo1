@@ -76,7 +76,7 @@ public class QueueOfQueue {
         return queue;
     }
 
-     public static QueueOfQueue reverseWithDepth(QueueOfQueue queueOfQueue){
+/*     public static QueueOfQueue reverseWithDepth(QueueOfQueue queueOfQueue){
         QueueOfQueue qoqAux = new QueueOfQueue();
         StackOfQueues soq = new StackOfQueues();
         IQueue queueAux;
@@ -103,8 +103,8 @@ public class QueueOfQueue {
             soq.remove();
         }
         //Hacer un Stack of queues
-        return qoqAux;
-    }
+        return qoqAux;*/
+   // }
 
 
 
@@ -163,7 +163,8 @@ public class QueueOfQueue {
         /*Parte de flat*/
         printQueue(flat(qoq));
         /*Parte Reverse*/
-        printQoq(reverseWithDepth(qoq));
+
+        //printQoq(reverseWithDepth(qoq));
 
     }
 }

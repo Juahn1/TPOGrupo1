@@ -42,10 +42,11 @@ public class QueueOfStacks {
      * #Precondicion: Que los stack tengan si o si 3 elementos
      * */
     public void add(IStack a) {
-        if (this.count<this.max-1 && contador(a)==this.max) {
+        if (this.count<=this.max && contador(a)==this.max) {
             this.arrayofstacks[this.count] = a;
+            this.count++;
         }
-        this.count++;
+
     }
 
     public void remove() {
@@ -60,7 +61,7 @@ public class QueueOfStacks {
     }
 
 
-
+    public int getCount(){return this.count;}
 
     public boolean isEmpty() {
         return this.count == 0;
@@ -73,6 +74,10 @@ public class QueueOfStacks {
             return null;
         }
         return this.arrayofstacks[0];
+    }
+
+    public int getMax(){
+        return this.max;
     }
 
 
