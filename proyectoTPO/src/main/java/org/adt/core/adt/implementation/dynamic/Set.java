@@ -147,4 +147,32 @@ public class Set implements ISet {
         }
         return this;
     }
+
+    public Set copySet(){
+        int[] values= new int[this.count];
+        Set V= new Set();
+        int count=0;
+        while(!this.isEmpty()){
+            int x=this.choose();
+            values[count]=x;
+            count++;
+            V.add(x);
+            this.remove(x);
+        }
+        for (int value : values) {
+            this.add(value);
+        }
+        return V;
+    }
+
+    public boolean isIn(int a) {
+        Node current = this.first;
+        while (current != null) {
+            if (current.getValue() == a) {
+                return true;
+            }
+            current = current.getNext();
+        }
+        return false;
+    }
 }
