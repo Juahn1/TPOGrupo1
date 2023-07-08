@@ -34,4 +34,18 @@ public class Stack implements IStack {
         }
         return this.first.getValue();
     }
+
+    public Stack addBuilder(int a) {
+        this.first = new Node(a, this.first);
+        return this;
+    }
+
+    public Stack addAll(Set a) {
+        while(!a.isEmpty()){
+            int x= a.choose();
+            this.add(x);
+            a.remove(x);
+        }
+        return this;
+    }
 }

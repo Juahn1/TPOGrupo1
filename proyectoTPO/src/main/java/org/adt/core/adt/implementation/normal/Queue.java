@@ -43,4 +43,11 @@ public class Queue implements IQueue {
         }
         return this.array[0];
     }
+    public Queue(Integer...values){
+        this.array=new int[10000];
+        this.count=0;
+        for (Integer value : values) {
+            this.add(value);
+        }
+    }
 }

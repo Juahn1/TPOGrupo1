@@ -115,4 +115,36 @@ public class Set implements ISet {
         }
         return exists(value, node.getNext());
     }
+
+    public Set addBuilder(int a) {
+        if (this.first == null) {
+            this.first = new Node(a, null);
+            this.count++;
+            return this;
+        }
+
+        if (this.first.getValue() == a) {
+            return this;
+        }
+
+        Node candidate = this.first;
+        while (candidate.getNext() != null) {
+            candidate = candidate.getNext();
+            if (candidate.getValue() == a) {
+                return this;
+            }
+        }
+        candidate.setNext(new Node(a, null));
+        this.count++;
+        return this;
+    }
+
+    public Set addAll(Set a) {
+        while(!a.isEmpty()){
+            int x= a.choose();
+            this.add(x);
+            a.remove(x);
+        }
+        return this;
+    }
 }
